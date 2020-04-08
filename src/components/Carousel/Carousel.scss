@@ -3,5 +3,47 @@
   margin: 40px auto;
   color: #0a3d62;
   text-align: center;
+  .wrapper{
+    width: 100%;
+    height: 336px;
+    position: relative;
+    max-width: 90%;
+    overflow: hidden;
+    align-self: center;
+
+    .carousel-container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: inherit;
+      overflow: hidden;
+      align-self: center;
+      width: 1500px;
+      transition: transform .4s ease-in-out;
+      justify-content: space-around;
+
+    }
+
+    .button-container{
+      position: absolute;
+      width: 100%;
+      top:50%;
+      display: flex;
+      justify-content: space-between;
+      button{
+        border: none;
+        background: none;
+        color: #576574;
+        outline: none;
+        cursor: pointer;
+        &.--hidden {
+          opacity:0;
+        }
+        svg{
+        font-size: 30px;
+        }
+      }
+    }
+  }
 
 }
+

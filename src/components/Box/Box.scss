@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 5px;
   width: 280px;
-  opacity: 0;
+  opacity: 0.6;
   transition: opacity 300ms linear;
  &.--active {
     opacity:1
