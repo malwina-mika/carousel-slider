@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "type": "articles",
+      "id": "1",
+      "attributes": {
+        "body": "PHOTOGRAPHY",
+        "title": "Get pictures in front of chic landmarks",
+        "review": 2,
+        "rating": 3,
+        "rating_amount": 205,
+        "img_url": "images/photography.jpg",
+        "created": "2019-05-22T11:56:29.000Z",
+        "updated": "2019-05-22T13:56:50.000Z"
+      }
+    },
+    {
+      "type": "articles",
+      "id": "2",
+      "attributes": {
+        "body": "HISTORY",
+        "title": "Louvre- Art History lecture tour and afternoon tea",
+        "review": 2,
+        "rating": 5,
+        "rating_amount": 14,
+        "img_url": "images/history.jpg",
+        "created": "2019-06-22T14:56:29.000Z",
+        "updated": "2019-06-22T15:20:00.000Z"
+      }
+    },
+    {
+      "type": "articles",
+      "id": "3",
+      "attributes": {
+        "body": "SHOPPING",
+        "title": "Explore French brands and designers!",
+        "review": 2,
+        "rating": 3,
+        "rating_amount": 46,
+        "img_url": "images/shopping.jpg",
+        "created": "2019-05-22T11:56:29.000Z",
+        "updated": "2019-05-22T13:56:50.000Z"
+      }
+    },
+    {
+      "type": "articles",
+      "id": "4",
+      "attributes": {
+        "body": "TRAVEL",
+        "title": "The best places to see",
+        "review": 2,
+        "rating": 4,
+        "rating_amount": 337,
+        "img_url": "images/travel.jpg",
+        "created": "2019-05-22T11:56:29.000Z",
+        "updated": "2019-05-22T13:56:50.000Z"
+      }
+    },
+    {
+      "type": "articles",
+      "id": "5",
+      "attributes": {
+        "body": "FOOD & DRINKS",
+        "title": "Bike and taste the best of Paris at your own pace",
+        "review": 2,
+        "rating": 3,
+        "rating_amount": 23,
+        "img_url": "images/food.jpg",
+        "created": "2019-05-22T11:56:29.000Z",
+        "updated": "2019-05-22T13:56:50.000Z"
+      }
+    },
+    {
+      "type": "articles",
+      "id": "2",
+      "attributes": {
+        "body": "CAR RIDE",
+        "title": "Visit Paris in vintage car",
+        "review": 2,
+        "rating": 4,
+        "rating_amount": 32,
+        "img_url": "images/car.jpg",
+        "created": "2019-06-22T14:56:29.000Z",
+        "updated": "2019-06-22T15:20:00.000Z"
+      }
+    }
+  ]
+}
