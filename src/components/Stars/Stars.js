@@ -58,7 +58,7 @@ class Stars extends React.Component {
   }
 
   render() {
-    const { rating, review } = this.props;
+    const { rating, ratingAmount } = this.props;
     const { starsConfig, reviewState } = this.state;
 
     return (
@@ -71,7 +71,7 @@ class Stars extends React.Component {
             icon={
               (i.active
                 ? i.active === 'active'
-                : i.id <= (reviewState || rating || review))
+                : i.id <= (reviewState || rating))
                 ? faStar
                 : farStar
             }
@@ -84,6 +84,7 @@ class Stars extends React.Component {
             }
           />
         ))}
+        <span>{ratingAmount}</span>
       </div>
     );
   }

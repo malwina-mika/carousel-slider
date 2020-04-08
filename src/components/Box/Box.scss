@@ -1,11 +1,15 @@
+$color-category: #833471;
+$color-link: #535c68;
+$color-link-hover: #f0932b;
+
 .Box-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 5px;
-  width: 280px;
-  opacity: 0.6;
+  padding: 8px;
+  min-width: 250px;
+  opacity: 0;
   transition: opacity 300ms linear;
+  text-align: left;
  &.--active {
     opacity:1
   } 
@@ -14,14 +18,37 @@
   width: 100%;
   object-fit: cover;
   }
-  p{
-    font-weight: 500;
-    color: #833471;
-  }
-  h4{
-    display: block;
-    height: 68px;
-    padding: 0 10px 10px 10px;
-  }
+    p{
+      margin: 3px 0 5px 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-category;
+    }
+    h3{
+      display: block;
+      height: 60px;
+      margin: 0;
+    }
+    .link{
+      color: $color-link;
+      text-decoration: none;
+      margin: 20px 0 10px 0;
+      font-weight: 500;
+      font-size: 14px;
+      &:hover{
+        cursor: pointer;
+        color: $color-link-hover;
+      }
+    }
 
+}
+@media (min-width: 768px) and (max-width: 1025px){
+
+}
+
+@media (max-width: 767px)  {
+  .Box-container {
+    min-width: 210px;
+    max-width: 230px;
+  }
 }

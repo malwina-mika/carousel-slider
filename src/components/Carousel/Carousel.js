@@ -11,6 +11,35 @@ class Carousel extends React.Component {
     cardsAmount: 4,
   };
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  }
+
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    const width = window.innerWidth;
+
+    let amount = 4;
+    if (width <= 550) {
+      amount = 1;
+    }
+    if (width > 550 && width <= 768) {
+      amount = 2;
+    }
+    if (width > 769 && width <= 1024) {
+      amount = 3;
+    }
+    if (width > 1025) {
+      amount = 4;
+    }
+    this.setState({ cardsAmount: amount });
+  };
+
   handleIncrement = () => {
     if (!this.isLastIndex()) {
       this.setState((prevState) => ({
@@ -27,12 +56,11 @@ class Carousel extends React.Component {
     }
   }
 
+
   isFirstIndex = () => this.state.startIndex === 0;
-  isLastIndex = () => this.state.startIndex + 4 >= 6;
+  isLastIndex = () => this.state.startIndex + this.state.cardsAmount >= data['data'].length;
 
   render() {
-
-    const { cardsAmount } = this.state
 
     return (
       <section className="container">
@@ -44,15 +72,15 @@ class Carousel extends React.Component {
             }}>
             {
               data['data'].map((item, i) => {
-                const { title, id, img_url: img, rating, body, review, rating_amount: ratingAmount } = item.attributes;
-                const isActive = this.state.startIndex <= i && i < this.state.startIndex + cardsAmount;
+                const { title, id, img_url: img, rating, category, review, rating_amount: ratingAmount } = item.attributes;
+                const isActive = this.state.startIndex <= i && i < this.state.startIndex + this.state.cardsAmount;
                 return (
                   <Box
                     isActive={isActive}
                     key={id}
                     title={title}
                     img={img}
-                    body={body}
+                    category={category}
                     review={review}
                     rating={rating}
                     ratingAmount={ratingAmount} />
@@ -63,11 +91,13 @@ class Carousel extends React.Component {
 
           </div>
           <div className='button-container'>
-            <button>
-              <FontAwesomeIcon icon={faChevronLeft} onClick={this.handleDecrement} />
+            <button className={(this.isFirstIndex()) ? '--hidden' : ''}>
+              <FontAwesomeIcon icon={faChevronLeft}
+                onClick={this.handleDecrement} />
             </button>
-            <button>
-              <FontAwesomeIcon icon={faChevronRight} onClick={this.handleIncrement} />
+            <button className={(this.isLastIndex()) ? '--hidden' : ''}>
+              <FontAwesomeIcon icon={faChevronRight}
+                onClick={this.handleIncrement} />
             </button>
           </div>
         </div>

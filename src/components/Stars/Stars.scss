@@ -1,6 +1,12 @@
+$color-stars: #6D214F;
+
 .active {
-  color: #d58e32;
+  color: $color-stars;
   cursor: pointer;
+}
+
+span{
+  margin-left: 4px;
 }
 
 
