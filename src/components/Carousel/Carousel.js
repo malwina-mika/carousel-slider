@@ -8,14 +8,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Carousel extends React.Component {
   state = {
     startIndex: 0,
+    cardsAmount: 4,
   };
 
+  handleIncrement = () => {
+    if (!this.isLastIndex()) {
+      this.setState((prevState) => ({
+        startIndex: ++prevState.startIndex
+      }));
+    }
+  }
 
+  handleDecrement = () => {
+    if (!this.isFirstIndex()) {
+      this.setState((prevState) => ({
+        startIndex: --prevState.startIndex
+      }));
+    }
+  }
 
   isFirstIndex = () => this.state.startIndex === 0;
   isLastIndex = () => this.state.startIndex + 4 >= 6;
 
   render() {
+
+    const { cardsAmount } = this.state
 
     return (
       <section className="container">
@@ -28,7 +45,7 @@ class Carousel extends React.Component {
             {
               data['data'].map((item, i) => {
                 const { title, id, img_url: img, rating, body, review, rating_amount: ratingAmount } = item.attributes;
-                const isActive = this.state.startIndex <= i && i < this.state.startIndex + 4;
+                const isActive = this.state.startIndex <= i && i < this.state.startIndex + cardsAmount;
                 return (
                   <Box
                     isActive={isActive}
