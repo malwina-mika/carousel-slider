@@ -1,0 +1,27 @@
+.Box-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  width: 280px;
+  opacity: 0;
+  transition: opacity 300ms linear;
+  &.--active {
+    opacity:1
+  }
+  img {
+  height: 130px;
+  width: 100%;
+  object-fit: cover;
+  }
+  p{
+    font-weight: 500;
+    color: #833471;
+  }
+  h4{
+    display: block;
+    height: 68px;
+    padding: 0 10px 10px 10px;
+  }
+
+}
